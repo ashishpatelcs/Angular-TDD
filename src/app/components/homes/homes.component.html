@@ -1,0 +1,29 @@
+<div
+  class="uk-container uk-container-expand uk-padding-remove-horizontal uk-margin-left uk-margin-right"
+>
+  <h1 class="uk-heading-primary">Homes</h1>
+
+  <div
+    class="uk-grid-match uk-child-width-1-5@l uk-child-width-1-4@m uk-child-width-1-2@s"
+    uk-grid
+  >
+    <div *ngFor="let home of homes$ | async" id="home">
+      <div class="uk-card">
+        <div id="image" class="uk-card-media-top">
+          <img src="{{ home.image }}" />
+        </div>
+        <div class="uk-card-body uk-padding-remove">
+          <div id="title" class="uk-text-bold">
+            {{ home.title }}
+          </div>
+          <div id="location" class="uk-text-muted">
+            {{ home.location }}
+          </div>
+        </div>
+        <div id="book-btn">
+          <button (click)="openDialog(home)">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
