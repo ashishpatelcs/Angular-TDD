@@ -1,8 +1,11 @@
-<div id="title">{{data.home.title}}</div>
-<div id="price">{{data.home.price}}</div>
+<div id="title">Book {{data.home.title}}</div>
+<div id="price">${{data.home.price}} per night</div>
 <div id="check-in">
-    <input type="text">
+    <input type="text" [(ngModel)]="checkIn">
 </div>
 <div id="check-out">
-    <input type="text">
+    <input type="text" [(ngModel)]="checkOut">
+</div>
+<div id="total">
+    Total: ${{ calculateTotal() }}
 </div>
